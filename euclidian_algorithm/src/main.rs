@@ -15,19 +15,19 @@ fn euclid(val_1: i64, val_2: i64) {
     // recursively call the function until the value of z is 0 or 1
     // indicating that the gcd has been found
     if z == 0 {
-        println!("x: {:?}, y: {:?}, z: {:?}", x, y, z);
+        println!("m: {:?}, n: {:?}, z: {:?}", x, y, z);
         println!("gcd: {:?}", y);
     } else if z == 1 {
-        println!("x: {:?}, y: {:?}, z: {:?}", x, y, z);
+        println!("m: {:?}, n: {:?}, z: {:?}", x, y, z);
         println!("gcd: {:?}", z);
     } else {
-        println!("x: {:?}, y: {:?}, z: {:?}", x, y, z);
+        println!("m: {:?}, n: {:?}, z: {:?}", x, y, z);
         euclid(y, z);
     }
 }
 
 fn main() {
-    euclid(513, 614);
+    //euclid(513, 614);
     euclid(1024, 888);
-    euclid(8562152543, 893884534109213);
+    //euclid(8562152543, 893884534109213);
 }
