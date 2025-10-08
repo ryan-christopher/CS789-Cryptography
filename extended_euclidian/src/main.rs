@@ -77,10 +77,11 @@ fn find_coefficients(
 }
 
 fn main() {
-    println!("\nExtended Euclidian (513, 614)");
-    extended_euclidian(513, 614, Vec::<i64>::new());
-    println!("\nExtended Euclidian (1024, 888)");
-    extended_euclidian(1024, 888, Vec::<i64>::new());
+    //println!("\nExtended Euclidian (513, 614)");
+    //extended_euclidian(513, 614, Vec::<i64>::new());
+    //println!("\nExtended Euclidian (1024, 888)");
+    //extended_euclidian(1024, 888, Vec::<i64>::new());
     //println!("\nExtended Euclidian (8562152543, 893884534109213)");
     //extended_euclidian(8562152543, 893884534109213, Vec::<i64>::new());
+    extended_euclidian(2, 29, Vec::<i64>::new());
 }
