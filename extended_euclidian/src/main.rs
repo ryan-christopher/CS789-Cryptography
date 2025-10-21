@@ -52,36 +52,42 @@ fn find_coefficients(
 ) {
     // begin replacing factors on n first, alternate between
     // n and m
-    let mut n_turn = true;
-    let initial_val = val_list[0];
-    // continue until the original largest value is reached
-    while m != initial_val && n != initial_val {
-        // when n is being repalced, remove 2 values from the list
-        if n_turn {
-            n = val_list[val_list.len() - 3];
-            val_list.pop();
-            val_list.pop();
-            // update x val
-            x = x + (y * -1) * (n / m);
-        } else {
-            // when m is being replaced, don't remove any values
-            m = val_list[val_list.len() - 2];
-            // update y val
-            y = y - x * (m / n);
+    if val_list.len() == 2 {
+        y = (-1 * (m / n)) % m;
+    } else {
+        let mut n_turn = true;
+        let initial_val = val_list[0];
+        // continue until the original largest value is reached
+        while m != initial_val && n != initial_val {
+            // when n is being repalced, remove 2 values from the list
+            if n_turn {
+                n = val_list[val_list.len() - 3];
+                val_list.pop();
+                val_list.pop();
+                // update x val
+                x = x + (y * -1) * (n / m);
+            } else {
+                // when m is being replaced, don't remove any values
+                m = val_list[val_list.len() - 2];
+                // update y val
+                y = y - x * (m / n);
+            }
+            n_turn = !n_turn;
         }
-        n_turn = !n_turn;
     }
+
     println!("{:?}({:?}) + {:?}({:?}) = {:?}", x, m, y, n, gcd);
     println!("x = {:?}", x);
     println!("y = {:?}", y);
 }
 
 fn main() {
-    //println!("\nExtended Euclidian (513, 614)");
-    //extended_euclidian(513, 614, Vec::<i64>::new());
+    println!("\nExtended Euclidian (513, 614)");
+    extended_euclidian(513, 614, Vec::<i64>::new());
     //println!("\nExtended Euclidian (1024, 888)");
     //extended_euclidian(1024, 888, Vec::<i64>::new());
     //println!("\nExtended Euclidian (8562152543, 893884534109213)");
     //extended_euclidian(8562152543, 893884534109213, Vec::<i64>::new());
+    println!("\nExtended Euclidian (2, 29)");
     extended_euclidian(2, 29, Vec::<i64>::new());
 }
